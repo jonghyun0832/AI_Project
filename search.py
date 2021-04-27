@@ -119,7 +119,26 @@ def depthFirstSearch(problem):
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
-    "*** YOUR CODE HERE ***"
+
+    path = []
+    start = problem.getStartState()
+    path += start,
+    states = util.Queue()
+    stateTuple = (start, [])
+    states.push(stateTuple)
+    while (not states.isEmpty()):
+        state, act = states.pop()
+    	if problem.isGoalState(state):
+    	    print("yammy")
+            return act
+        path += state,
+        successor = problem.getSuccessors(state)
+        for i in successor:
+            choosen = i[0]
+            if choosen not in path:
+                DirAct = act + [i[1]]
+                states.push((choosen, DirAct))
+    return DirAct
 
     util.raiseNotDefined()
 
