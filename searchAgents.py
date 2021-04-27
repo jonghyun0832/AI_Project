@@ -484,7 +484,7 @@ class ClosestDotSearchAgent(SearchAgent):
         walls = gameState.getWalls()
         problem = AnyFoodSearchProblem(gameState)
 
-        "*** YOUR CODE HERE ***"
+        return search.breadthFirstSearch(problem)
 
         util.raiseNotDefined()
 
